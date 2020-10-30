@@ -14,11 +14,11 @@ You can apply these automatically with [Simple patches plugin for Composer](http
         "composer-exit-on-patch-failure": true,
         "patches": {
             "phpunit/phpunit-mock-objects": {
-                "Fix PHP 7 and 8 compatibility": "https://raw.githubusercontent.com/yiisoft/phpunit-patches/phpunit_mock_objects.patch"
+                "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
             },
             "phpunit/phpunit": {
-                "Fix PHP 7 compatibility": "https://raw.githubusercontent.com/yiisoft/phpunit-patches/phpunit_php7.patch",
-                "Fix PHP 8 compatibility": "https://raw.githubusercontent.com/yiisoft/phpunit-patches/phpunit_php8.patch"
+                "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
+                "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch"
             }
         }
     }
