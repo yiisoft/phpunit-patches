@@ -37,3 +37,42 @@ index b48f354cd..d59cdeea7 100644
  {
     return true;
  }
+--- a/src/Util/Configuration.php
++++ b/src/Util/Configuration.php
+@@ -511,25 +511,20 @@
+                 define($name, $value);
+             }
+         }
++        
++        foreach ($configuration['var'] as $name => $data) {
++            $GLOBALS[$name] = $data['value'];
++        }
+ 
+-        foreach (array('var', 'post', 'get', 'cookie', 'server', 'files', 'request') as $array) {
+-            // See https://github.com/sebastianbergmann/phpunit/issues/277
+-            switch ($array) {
+-                case 'var':
+-                    $target = &$GLOBALS;
+-                    break;
+-
+-                case 'server':
+-                    $target = &$_SERVER;
+-                    break;
++        foreach ($configuration['server'] as $name => $data) {
++            $_SERVER[$name] = $data['value'];
++        }
+ 
+-                default:
+-                    $target = &$GLOBALS['_' . strtoupper($array)];
+-                    break;
+-            }
++        foreach (['post', 'get', 'cookie', 'files', 'request'] as $array) {
++            $target = &$GLOBALS['_' . strtoupper($array)];
+ 
+-            foreach ($configuration[$array] as $name => $value) {
+-                $target[$name] = $value;
++            foreach ($configuration[$array] as $name => $data) {
++                $target[$name] = $data['value'];
+             }
+         }
+ 
