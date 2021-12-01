@@ -66,7 +66,7 @@ index b48f354cd..d59cdeea7 100644
 -                    $target = &$GLOBALS['_' . strtoupper($array)];
 -                    break;
 -            }
-+        foreach (['post', 'get', 'cookie', 'files', 'request'] as $array) {
++        foreach (array('post', 'get', 'cookie', 'files', 'request') as $array) {
 +            $target = &$GLOBALS['_' . strtoupper($array)];
  
 -            foreach ($configuration[$array] as $name => $value) {
