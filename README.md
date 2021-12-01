@@ -1,6 +1,6 @@
 # Legacy PHPUnit patches
 
-Patches for PHPUnit 4.8.34 allowing it to run on PHP 5.3 - PHP 8.
+Patches for PHPUnit 4.8.34 allowing it to run on PHP 5.3 - PHP 8.1.
 
 You can apply these automatically with [Simple patches plugin for Composer](https://github.com/cweagans/composer-patches) in your `composer.json`:
 
