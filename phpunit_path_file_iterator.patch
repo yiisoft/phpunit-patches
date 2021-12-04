@@ -1,0 +1,12 @@
+diff --git a/src/Iterator.php b/src/Iterator.php
+index c8f20a7..a09a3e9 100644
+--- a/src/Iterator.php
++++ b/src/Iterator.php
+@@ -73,6 +73,7 @@ public function __construct(Iterator $iterator, array $suffixes = array(), array
+     /**
+      * @return bool
+      */
++    #[\ReturnTypeWillChange]
+     public function accept()
+     {
+         $current  = $this->getInnerIterator()->current();
