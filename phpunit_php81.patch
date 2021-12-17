@@ -1,0 +1,128 @@
+diff --git a/src/Framework/Constraint.php b/src/Framework/Constraint.php
+index e2db66f..c2e1406 100644
+--- a/src/Framework/Constraint.php
++++ b/src/Framework/Constraint.php
+@@ -81,6 +81,7 @@ protected function matches($other)
+      *
+      * @since  Method available since Release 3.4.0
+      */
++    #[\ReturnTypeWillChange]
+     public function count()
+     {
+         return 1;
+diff --git a/src/Framework/TestCase.php b/src/Framework/TestCase.php
+index b4c7d3a..ffdf000 100644
+--- a/src/Framework/TestCase.php
++++ b/src/Framework/TestCase.php
+@@ -304,6 +304,7 @@ public function toString()
+      *
+      * @return int
+      */
++    #[\ReturnTypeWillChange]
+     public function count()
+     {
+         return 1;
+diff --git a/src/Framework/TestResult.php b/src/Framework/TestResult.php
+index 8da7c35..ac94c98 100644
+--- a/src/Framework/TestResult.php
++++ b/src/Framework/TestResult.php
+@@ -738,6 +738,7 @@ public function run(PHPUnit_Framework_Test $test)
+      *
+      * @return int
+      */
++    #[\ReturnTypeWillChange]
+     public function count()
+     {
+         return $this->runTests;
+diff --git a/src/Framework/TestSuite.php b/src/Framework/TestSuite.php
+index 2a01e2c..d151e1e 100644
+--- a/src/Framework/TestSuite.php
++++ b/src/Framework/TestSuite.php
+@@ -392,6 +392,7 @@ public function addTestFiles($filenames)
+      *
+      * @return int
+      */
++    #[\ReturnTypeWillChange]
+     public function count($preferCache = false)
+     {
+         if ($preferCache && $this->cachedNumTests != null) {
+@@ -968,6 +969,7 @@ public function setBackupStaticAttributes($backupStaticAttributes)
+      *
+      * @since  Method available since Release 3.1.0
+      */
++    #[\ReturnTypeWillChange]
+     public function getIterator()
+     {
+         $iterator = new PHPUnit_Util_TestSuiteIterator($this);
+diff --git a/src/Runner/Filter/Group.php b/src/Runner/Filter/Group.php
+index 9257b3b..2bfc710 100644
+--- a/src/Runner/Filter/Group.php
++++ b/src/Runner/Filter/Group.php
+@@ -44,6 +44,7 @@ function ($test) {
+     /**
+      * @return bool
+      */
++    #[\ReturnTypeWillChange]
+     public function accept()
+     {
+         $test = $this->getInnerIterator()->current();
+diff --git a/src/Util/TestSuiteIterator.php b/src/Util/TestSuiteIterator.php
+index edf7b95..331c241 100644
+--- a/src/Util/TestSuiteIterator.php
++++ b/src/Util/TestSuiteIterator.php
+@@ -36,6 +36,7 @@ public function __construct(PHPUnit_Framework_TestSuite $testSuite)
+     /**
+      * Rewinds the Iterator to the first element.
+      */
++    #[\ReturnTypeWillChange]
+     public function rewind()
+     {
+         $this->position = 0;
+@@ -46,6 +47,7 @@ public function rewind()
+      *
+      * @return bool
+      */
++    #[\ReturnTypeWillChange]
+     public function valid()
+     {
+         return $this->position < count($this->tests);
+@@ -56,6 +58,7 @@ public function valid()
+      *
+      * @return int
+      */
++    #[\ReturnTypeWillChange]
+     public function key()
+     {
+         return $this->position;
+@@ -66,6 +69,7 @@ public function key()
+      *
+      * @return PHPUnit_Framework_Test
+      */
++    #[\ReturnTypeWillChange]
+     public function current()
+     {
+         return $this->valid() ? $this->tests[$this->position] : null;
+@@ -74,6 +78,7 @@ public function current()
+     /**
+      * Moves forward to next element.
+      */
++    #[\ReturnTypeWillChange]
+     public function next()
+     {
+         $this->position++;
+@@ -84,6 +89,7 @@ public function next()
+      *
+      * @return PHPUnit_Util_TestSuiteIterator
+      */
++    #[\ReturnTypeWillChange]
+     public function getChildren()
+     {
+         return new self(
+@@ -96,6 +102,7 @@ public function getChildren()
+      *
+      * @return bool
+      */
++    #[\ReturnTypeWillChange]
+     public function hasChildren()
+     {
+         return $this->tests[$this->position] instanceof PHPUnit_Framework_TestSuite;
