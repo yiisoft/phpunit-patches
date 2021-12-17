@@ -17,12 +17,12 @@ You can apply these automatically with [Simple patches plugin for Composer](http
                 "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
             },
             "phpunit/php-file-iterator": {
-                "Fix php-path-file deprecate warn": "https://yiisoft.github.io/phpunit-patches/phpunit_path_file_iterator.patch"
+                "Fix PHP 8.1 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_path_file_iterator.patch"
             },
             "phpunit/phpunit": {
                 "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
                 "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch",
-                "Fix PHP 8.1 deprecate warns": "https://yiisoft.github.io/phpunit-patches/phpunit_php81.patch"
+                "Fix PHP 8.1 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php81.patch"
             }
         }
     }
