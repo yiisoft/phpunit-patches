@@ -126,3 +126,29 @@ index edf7b95..331c241 100644
      public function hasChildren()
      {
          return $this->tests[$this->position] instanceof PHPUnit_Framework_TestSuite;
+diff --git a/src/Util/Getopt.php b/src/Util/Getopt.php
+index 96931a3..32f227a 100644
+--- a/src/Util/Getopt.php
++++ b/src/Util/Getopt.php
+@@ -150,7 +150,7 @@ protected static function parseLongOption($arg, $long_options, &$opts, &$args)
+
+             if (substr($long_opt, -1) == '=') {
+                 if (substr($long_opt, -2) != '==') {
+-                    if (!strlen($opt_arg)) {
++                    if (!strlen(isset($opt_arg) ? $opt_arg : '')) {
+                         $opt_arg = current($args);
+                         next($args);
+                         if ($opt_arg === false) {
+diff --git a/src/Util/Printer.php b/src/Util/Printer.php
+index a22f862..aaa919f 100644
+--- a/src/Util/Printer.php
++++ b/src/Util/Printer.php
+@@ -121,7 +121,7 @@ public function incrementalFlush()
+     public function write($buffer)
+     {
+         if ($this->out) {
+-            fwrite($this->out, $buffer);
++            fwrite($this->out, isset($buffer) ? $buffer : '');
+
+             if ($this->autoFlush) {
+                 $this->incrementalFlush();
