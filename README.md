@@ -13,11 +13,10 @@ You can apply these automatically with [Simple patches plugin for Composer](http
     "extra": {
         "composer-exit-on-patch-failure": true,
         "patches": {
+            "composer-exit-on-patch-failure": true,
+            "patches": {
             "phpunit/phpunit-mock-objects": {
-                "Fix PHP 7 and 8 compatibility": "https://github.com/longthanhtran/phpunit-patches/blob/main/phpunit_mock_objects.patch"
-            },
-            "phpunit/php-file-iterator": {
-                "Fix php-path-file deprecate warn": "https://github.com/longthanhtran/phpunit-patches/blob/main/phpunit_path_file_iterator.patch"
+                "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
             },
             "phpunit/php-file-iterator": {
                 "Fix PHP 8.1 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_path_file_iterator.patch"
