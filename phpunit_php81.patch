@@ -152,3 +152,15 @@ index a22f862..aaa919f 100644
 
              if ($this->autoFlush) {
                  $this->incrementalFlush();
+diff --git a/src/Runner/Filter/Test.php b/src/Runner/Filter/Test.php
+index bae4a5c..fb3f8c9 100644
+--- a/src/Runner/Filter/Test.php
++++ b/src/Runner/Filter/Test.php
+@@ -88,6 +88,7 @@ protected function setFilter($filter)
+     /**
+      * @return bool
+      */
++    #[\ReturnTypeWillChange]
+     public function accept()
+     {
+         $test = $this->getInnerIterator()->current();
