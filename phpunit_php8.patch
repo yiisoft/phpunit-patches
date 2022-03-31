@@ -76,3 +76,18 @@ index b48f354cd..d59cdeea7 100644
              }
          }
  
+--- a/src/Util/GlobalState.php
++++ b/src/Util/GlobalState.php
+@@ -65,6 +65,12 @@
+                 continue;
+             }
+
++            // Skip /phpunit/phpunit/phpunit that is incorrectly included when calling phpunit from vendor/bin/phpunit with Composer 2 on PHP 8.0+
++            // Fixes https://github.com/yiisoft/phpunit-patches/issues/7
++            if (preg_match('#/phpunit/phpunit/phpunit$#', str_replace('\\', '/', $file))) {
++                continue;
++            }
++
+             if (!$blacklist->isBlacklisted($file) && is_file($file)) {
+                 $result = 'require_once \'' . $file . "';\n" . $result;
+             }
